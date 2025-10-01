@@ -1,0 +1,127 @@
+---
+layout: base.njk
+title: Blog & Musings
+description: Professional thoughts and insights from Ronald Wertlen on software engineering, security, leadership, and technology trends.
+---
+
+<section class="page-header">
+    <div class="container">
+        <h1>Blog & Musings</h1>
+        <p class="page-subtitle">Thoughts on engineering, security, and leadership</p>
+    </div>
+</section>
+
+<section class="blog-intro">
+    <div class="container">
+        <div class="intro-content">
+            <p>Welcome to my collection of thoughts and observations on software engineering, security, team leadership, and the evolving technology landscape. Drawing from 25+ years of experience leading engineering teams and building secure, scalable systems, I share insights that might be useful to fellow practitioners.</p>
+            <br/><p>Many of these posts appeared first on LinkedIn.</p>
+        </div>
+    </div>
+</section>
+
+<section class="blog-content">
+    <div class="container">
+        {% if collections.blogPosts.length > 0 %}
+            <div class="blog-posts">
+                {% for post in collections.blogPosts %}
+                    <article class="blog-post">
+                        {% if post.data.image %}
+                            <div class="post-image">
+                                <img src="/images/{{ post.data.image }}" alt="{{ post.data.title }}" loading="lazy">
+                            </div>
+                        {% endif %}
+                        
+                        <div class="post-content">
+                            <header class="post-header">
+                                <h2 class="post-title">
+                                    <a href="{{ post.url }}">{{ post.data.title }}</a>
+                                </h2>
+                                <div class="post-meta">
+                                    <time class="post-date">{{ post.data.date | date("%B %d, %Y") }}</time>
+                                    {% if post.data.tags %}
+                                        <div class="post-tags">
+                                            {% for tag in post.data.tags %}
+                                            <span class="tag">{{ tag }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </header>
+                            
+                            <div class="post-excerpt">
+                                <p>{{ post.data.excerpt }}</p>
+                            </div>
+                            
+                            <div class="post-actions">
+                                <a href="{{ post.url }}" class="read-more">Read full post →</a>
+                            </div>
+                        </div>
+                    </article>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="coming-soon">
+                <div class="coming-soon-content">
+                    <h2>Coming Soon</h2>
+                    <p>I'm currently working on curating content for this space. Check back soon for articles covering:</p>
+                    
+                    <div class="topic-grid">
+                        <div class="topic-item">
+                            <h3>Engineering Leadership</h3>
+                            <p>Lessons learned from scaling teams and transforming engineering cultures</p>
+                        </div>
+                        
+                        <div class="topic-item">
+                            <h3>Security by Design</h3>
+                            <p>Practical approaches to building security into development processes</p>
+                        </div>
+                        
+                        <div class="topic-item">
+                            <h3>Cost-Effective Architecture</h3>
+                            <p>Balancing technical excellence with business realities and budget constraints</p>
+                        </div>
+                        
+                        <div class="topic-item">
+                            <h3>DevOps & Automation</h3>
+                            <p>Real-world experiences implementing CI/CD and improving DORA metrics</p>
+                        </div>
+                        
+                        <div class="topic-item">
+                            <h3>Team Transformation</h3>
+                            <p>Strategies for cultural change and productivity improvements in engineering teams</p>
+                        </div>
+                        
+                        <div class="topic-item">
+                            <h3>Technology Trends</h3>
+                            <p>Observations on emerging technologies and their practical applications</p>
+                        </div>
+                    </div>
+                    
+                    <div class="subscribe-notice">
+                        <p>Want to be notified when new content is published? <a href="#contact">Get in touch</a> and I'll let you know when articles go live.</p>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</section>
+
+<section class="professional-writing">
+    <div class="container">
+        <h2>Professional Background</h2>
+        <div class="writing-experience">
+            <p>Throughout my career, I've contributed to various forms of technical documentation and thought leadership:</p>
+            
+            <ul class="experience-list">
+                <li><strong>White Papers</strong> - Technical architecture and security concept documentation</li>
+                <li><strong>Research Publications</strong> - Academic contributions during my research roles</li>
+                <li><strong>Technical Documentation</strong> - Comprehensive system design and implementation guides</li>
+                <li><strong>Team Communications</strong> - Regular insights and updates for engineering teams</li>
+                <li><strong>Industry Presentations</strong> - Sharing experiences at conferences and professional gatherings</li>
+            </ul>
+            
+            <p>This blog will be a more informal space to share practical insights and lessons learned from hands-on engineering leadership.</p>
+        </div>
+    </div>
+</section>

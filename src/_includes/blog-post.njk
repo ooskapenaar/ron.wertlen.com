@@ -1,0 +1,46 @@
+---
+layout: base.njk
+---
+
+<section class="page-header">
+    <div class="container">
+        <h1>{{ title }}</h1>
+        {% if subtitle %}
+        <p class="page-subtitle">{{ subtitle }}</p>
+        {% endif %}
+    </div>
+</section>
+
+<section class="blog-post-content">
+    <div class="container">
+        <article class="single-blog-post">
+            {% if image %}
+            <div class="post-featured-image">
+                <img src="/images/{{ image }}" alt="{{ title }}" loading="lazy">
+            </div>
+            {% endif %}
+            
+            <div class="post-meta-info">
+                {% if date %}
+                <time class="post-date">{{ date | date("%B %d, %Y") }}</time>
+                {% endif %}
+                
+                {% if tags %}
+                <div class="post-tags">
+                    {% for tag in tags %}
+                    <span class="tag">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            
+            <div class="post-body">
+                {{ content | safe }}
+            </div>
+            
+            <div class="post-navigation">
+                <a href="/blog/" class="back-to-blog">← Back to Blog</a>
+            </div>
+        </article>
+    </div>
+</section>

@@ -1,0 +1,20 @@
+{
+  "name": "ron-wertlen-website",
+  "version": "1.3.0",
+  "description": "Personal website for Ronald Wertlen - Senior Director of Engineering and Security Enthusiast",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve",
+    "dev": "eleventy --serve --watch"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "3.1.2"
+  },
+  "keywords": [
+    "eleventy",
+    "static-site",
+    "personal-website"
+  ],
+  "author": "Ronald Wertlen",
+  "license": "MIT"
+}
